@@ -1,5 +1,5 @@
-# Continuous Sepsis Intelligence: ICU Decision Support
-### Research Prototype • Not FDA Cleared
+# Continuous Sepsis Intelligence: Gradient-Boosted ICU Decision Support
+### Research Prototype
 
 This directory contains the self-contained deployment package for the XGBoost Sepsis Clinical Decision Support Streamlit application.
 
@@ -36,27 +36,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 The application will open automatically in your browser at `http://localhost:8501`.
-
----
-
-## Deploying to Streamlit Community Cloud
-
-1. **Push to GitHub:**
-   - Initialize a Git repository with the contents of this folder:
-     ```bash
-     git init
-     git add .
-     git commit -m "Deploy Continuous Sepsis Intelligence dashboard"
-     git branch -M main
-     git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-     git push -u origin main
-     ```
-2. **Deploy on Streamlit Cloud:**
-   - Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
-   - Click **"New app"**.
-   - Select your repository and branch (`main`).
-   - Set **Main file path** to `app.py`.
-   - Click **"Deploy!"**. Streamlit Cloud will automatically install dependencies from `requirements.txt` and launch the app.
 
 ---
 
