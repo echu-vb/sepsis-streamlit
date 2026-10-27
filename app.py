@@ -44,6 +44,14 @@ st.markdown("""
         background-color: transparent !important;
     }
 
+    /* Dropdown Menus & Tooltips: Crisp White Text on Dark Backgrounds */
+    [data-baseweb="popover"] *,
+    [data-baseweb="tooltip"] *,
+    [data-baseweb="select"] *,
+    ul[role="listbox"] li * {
+        color: #ffffff !important;
+    }
+
     /* Optimized Page Padding */
     .block-container {
         padding-top: 0.8rem !important;
