@@ -33,9 +33,9 @@ st.markdown("""
         background-color: #f7fafb !important;
     }
 
-    /* Only style explicit content text, never dropdowns/popovers */
-    p, h1, h2, h3, h4, h5, h6, .editorial-heading, .bed-title {
-    color: #0a3641;
+    /* Enforce Dark Text Across All Standard Tags */
+    p, span, div, h1, h2, h3, h4, h5, h6, label, li, a {
+        color: #0a3641;
     }
 
     /* Force Table Cells to Always Have Dark High-Contrast Text */
@@ -44,11 +44,51 @@ st.markdown("""
         background-color: transparent !important;
     }
 
-    /* Dropdown Menus & Tooltips: Crisp White Text on Dark Backgrounds */
+    /* ============================================================
+       UNIVERSAL CONTRAST GUARD: NEVER ALLOW #0a3641 ON DARK SURFACES
+       ============================================================ */
+
+    /* 1. Tooltips (Next Alert, Shuffle Cohort, Sliders) */
+    div[data-baseweb="tooltip"],
+    div[data-baseweb="tooltip"] *,
+    div[role="tooltip"],
+    div[role="tooltip"] *,
+    [data-testid="stTooltipContent"],
+    [data-testid="stTooltipContent"] * {
+        background-color: #1e293b !important;
+        color: #ffffff !important;
+    }
+
+    /* 2. Dropdown Menus & Popover Options (Beds, Filters, Speeds) */
+    [data-baseweb="popover"],
     [data-baseweb="popover"] *,
-    [data-baseweb="tooltip"] *,
     [data-baseweb="select"] *,
+    ul[role="listbox"],
+    ul[role="listbox"] li,
     ul[role="listbox"] li * {
+        color: #ffffff !important;
+    }
+
+    /* 3. Secondary Buttons (Next Alert, Shuffle Cohort, Step buttons) */
+    .stButton > button {
+        background-color: #ffffff !important;
+        color: #0a3641 !important;
+        border: 1px solid #d8e6e7 !important;
+    }
+    .stButton > button:hover {
+        background-color: #f0f7f7 !important;
+        color: #008080 !important;
+        border-color: #008080 !important;
+    }
+
+    /* 4. Primary Buttons (Play Live Simulation, Escalate Bundle) */
+    .stButton > button[kind="primary"] {
+        background-color: #008080 !important;
+        color: #ffffff !important;
+        border: 1px solid #006666 !important;
+    }
+    .stButton > button[kind="primary"]:hover {
+        background-color: #0a3641 !important;
         color: #ffffff !important;
     }
 
@@ -305,32 +345,6 @@ st.markdown("""
         color: #0a3641 !important;
     }
 
-    /* Button Styling */
-    .stButton>button {
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        border: 1px solid #d8e6e7;
-        background-color: #ffffff;
-        color: #0a3641 !important;
-        height: 38px;
-        transition: all 0.10s ease;
-    }
-    .stButton>button:hover {
-        border-color: #008080;
-        color: #008080 !important;
-        background-color: #f0f7f7;
-    }
-    .stButton>button[kind="primary"] {
-        background-color: #008080 !important;
-        color: #ffffff !important;
-        border: 1px solid #006666 !important;
-    }
-    .stButton>button[kind="primary"]:hover {
-        background-color: #0a3641 !important;
-        border-color: #0a3641 !important;
-        color: #ffffff !important;
-    }
 </style>
 """, unsafe_allow_html=True)
 
