@@ -33,9 +33,9 @@ st.markdown("""
         background-color: #f7fafb !important;
     }
 
-    /* Enforce Dark Text Across All Standard Tags */
-    p, span, div, h1, h2, h3, h4, h5, h6, label, li, a {
-        color: #0a3641;
+    /* Only style explicit content text, never dropdowns/popovers */
+    p, h1, h2, h3, h4, h5, h6, .editorial-heading, .bed-title {
+    color: #0a3641;
     }
 
     /* Force Table Cells to Always Have Dark High-Contrast Text */
